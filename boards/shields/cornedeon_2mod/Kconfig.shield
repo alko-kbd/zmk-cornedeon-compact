@@ -1,0 +1,2 @@
+config SHIELD_CORNEDEON_COMPACT_CENTRAL
+    def_bool $(shields_list_contains,cornedeon_compact_central)

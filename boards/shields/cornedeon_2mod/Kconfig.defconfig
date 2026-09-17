@@ -1,0 +1,12 @@
+config ZMK_SPLIT
+    default n
+
+if SHIELD_CORNEDEON_COMPACT_CENTRAL
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_USB
+    default y
+
+endif  # CENTRAL

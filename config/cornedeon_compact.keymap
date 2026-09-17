@@ -1,0 +1,184 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <dt-bindings/zmk/matrix_transform.h>
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        layer_0 {
+            display-name = "Layer 0";
+
+            // ----------------------------------------------------------------------------------
+            // |   Q   |   W   |   E   |   R   |  T  |       |  Y  |   U   |  I  |   O   |  P [ |
+            // |   A   |   S   |   D   |   F   |  G  |       |  H  |   J   |  K  |   L   |  ;'  |
+            // |   Z   |   X   |   C   |   V   |  B  |       |  N  |   M   |  ,  |   .   |  /\  |
+            // |  CTRL | SHIFT |  ALT  | MO(1) | SPC |       | SPC | MO(2) | GUI | SHIFT | CTRL |
+
+            bindings = <
+&kp Q  &kp W  &kp E  &kp R  &mt GRAVE T                  &kp Y  &kp U  &kp I  &kp O  &mt LBKT P
+&kp A  &kp S  &kp D  &kp F  &kp G                        &kp H  &kp J  &kp K  &kp L  &mt SEMI SQT
+&kp Z  &kp X  &kp C  &kp V  &kp B                        &kp N  &mt RBKT M  &kp COMMA  &kp DOT &mt BSLH FSLH
+&kp LCTRL &kp LSHFT &kp LALT  &mo 1  &kp SPACE           &kp SPACE  &mo 2  &kp RGUI  &kp RSHFT &kp RCTRL
+            >;
+        };
+
+        layer_1 {
+            display-name = "Layer 1";
+
+            // --------------------------------------------------------------------------
+            // |  ESC  |   (   |   )   |  *  |  /  |      |  7  |  8  |  9  |  0  | BSP |
+            // |  TAB  |   [   |   ]   |  +  |  -  |      |  4  |  5  |  6  |  .  | DEL |
+            // |   \   |   {   |   }   |  <  |  >  |      |  1  |  2  |  3  |  =  | INS |
+            // |  CTRL | SHIFT |  ALT  |     | RET |      | RET |     | GUI | SHIFT | CTRL |
+
+            bindings = <
+&kp ESC   &kp LPAR   &kp RPAR  &kp STAR  &kp FSLH        &kp N7  &kp N8  &kp N9  &kp N0  &kp INS  
+&kp TAB   &kp LBKT   &kp RBKT  &kp PLUS  &kp MINUS       &kp N4  &kp N5  &kp N6  &kp DOT  &kp DEL  
+&kp BSLH  &kp LBRC   &kp RBRC  &kp LT    &kp GT          &kp N1  &kp N2  &kp N3  &kp EQUAL  &kp INS
+&kp LCTRL &kp LSHFT  &kp LALT  &trans    &kp RET         &kp RET &trans  &kp RGUI  &kp RSHFT  &kp RCTL
+            >;
+        };
+
+        layer_2 {
+            display-name = "Layer 2";
+
+            // ----------------------------------------------------------------------------------
+            // |   ~   |       | PGUP |      |  HOME |      |  F7 |  F8  |  F9 |  F10  | PSCRN |
+            // |   `   |       | PGDN |  UP  |  END  |      |  F4 |  F5  |  F6 |  F11  | NUMLK |
+            // |       |       | LEFT | DOWN | RIGHT |      |  F1 |  F2  |  F3 |  F12  |  MENU |
+            // | CTRL  | SHIFT | ALT  |      |  RET  |      | RET |      | GUI | SHIFT |  CTRL |
+
+            bindings = <
+&kp TILDE  &none     &kp PG_UP &none    &kp HOME               &kp F7  &kp F8  &kp F9  &kp F10  &kp PSCRN
+&kp GRAVE  &none     &kp PG_DN &kp UP   &kp END                &kp F4  &kp F5  &kp F6  &kp F11  &kp KP_NUM
+&none      &none     &kp LEFT  &kp DOWN &kp RIGHT              &kp F1  &kp F2  &kp F3  &kp F12  &kp K_APP
+&kp LCTRL  &kp LSHFT &kp LALT  &trans   &kp RET                &kp RET &trans  &kp RGUI &kp RSHFT &kp RCTRL
+            >;
+        };
+
+        layer_3 {
+            display-name = "Layer 3";
+
+            // -----------------------------------------------------------------------------------
+            // | BTCLR | BT0 | BT1 | BT2  | BT3 |        |     |     |     |     |     |     |
+            // |       |     |     |      |     |        |     |     |     |     |     |     |
+            // |       |     |     |      |     |        |     |     |     |     |     |     |
+            // |       |     |     |      |     |        |     |     |     |     |     |     |
+            // |       |     |     |      |     |        |     |     |     |     |     |     |
+
+            bindings = <
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &to 0  &to 1  &to 2  &to 3  &to 4
+&none  &none  &none  &none  &none                                     &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none                                     &none  &none  &none  &none  &none
+&none  &none  &none  &trans  &none                                    &none  &trans  &none  &none  &none
+            >;
+        };
+
+        layer_4 {
+            display-name = "Layer 4";
+
+            // -----------------------------------------------------------------------------------
+            // |     |     |     |     |     |     |         |     |     |     |     |     |     |
+            // |     |     |     |     |     |     |         |     |     |     |     |     |     |
+            // |     |     |     |     |     |     |         |     |     |     |     |     |     |
+            // |     |     |     |     |     |     |         |     |     |     |     |     |     |
+            // |     |     |     |     |     |     |         |     |     |     |     |     |     |
+            // |     |     |     |     |     |     |         |     |     |     |     |     |     |
+
+            bindings = <
+&none  &none  &none  &none  &none    &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none    &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none    &none  &none  &none  &none  &none
+&none  &none  &none  &trans &none    &none  &trans  &none  &none  &none
+            >;
+        };
+
+        layer_5 {
+            display-name = "Layer 5";
+
+            // -----------------------------------------------------------------------------------
+            // |     |     |     |     |     |     |         |     |     |     |     |     |     |
+            // |     |     |     |     |     |     |         |     |     |     |     |     |     |
+            // |     |     |     |     |     |     |         |     |     |     |     |     |     |
+            // |     |     |     |     |     |     |         |     |     |     |     |     |     |
+
+            bindings = <
+&none  &none  &none  &none  &none    &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none    &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none    &none  &none  &none  &none  &none
+&none  &none  &none  &trans &none    &none  &trans  &none  &none  &none
+            >;
+        };
+
+        layer_6 {
+            display-name = "Layer 6";
+
+            // -----------------------------------------------------------------------------------
+            // |     |     |     |     |     |     |         |     |     |     |     |     |     |
+            // |     |     |     |     |     |     |         |     |     |     |     |     |     |
+            // |     |     |     |     |     |     |         |     |     |     |     |     |     |
+            // |     |     |     |     |     |     |         |     |     |     |     |     |     |
+
+            bindings = <
+&none  &none  &none  &none  &none    &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none    &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none    &none  &none  &none  &none  &none
+&none  &none  &none  &trans &none    &none  &trans  &none  &none  &none
+            >;
+        };
+        
+        layer_7 {
+            display-name = "Layer 7";
+
+            // -----------------------------------------------------------------------------------
+            // |     |     |     |     |     |     |         |     |     |     |     |     |     |
+            // |     |     |     |     |     |     |         |     |     |     |     |     |     |
+            // |     |     |     |     |     |     |         |     |     |     |     |     |     |
+            // |     |     |     |     |     |     |         |     |     |     |     |     |     |
+
+            bindings = <
+&none  &none  &none  &none  &none    &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none    &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none    &none  &none  &none  &none  &none
+&none  &none  &none  &trans &none    &none  &trans  &none  &none  &none
+            >;
+        };
+
+
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        layer_3 {
+            if-layers = <1 2>;
+            then-layer = <3>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        combo_bt_clr_left {
+            timeout-ms = <50>;
+            layers = <1>;
+            key-positions = <0 1 2 3>;
+            bindings = <&bt BT_CLR>;
+        };
+
+        combo_bt_clr_right {
+            timeout-ms = <50>;
+            layers = <2>;
+            key-positions = <11 10 9 8>;
+            bindings = <&bt BT_CLR>;
+        };
+    };
+};

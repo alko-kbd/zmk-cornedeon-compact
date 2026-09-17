@@ -1,0 +1,11 @@
+file_format: "1"
+id: cornedeon-compact
+name: Cornedeon Compact
+type: shield
+url: https://github.com/alko-kbd/zmk-cornedeon-compact/
+requires: [pro_micro]
+features:
+  - keys
+  - studio
+siblings:
+  - cornedeon_compact_central
