@@ -40,7 +40,7 @@
             // |  CTRL | SHIFT |  ALT  |     | RET |      | RET |     | GUI | SHIFT | CTRL |
 
             bindings = <
-&kp ESC   &kp LPAR   &kp RPAR  &kp STAR  &kp FSLH        &kp N7  &kp N8  &kp N9  &kp N0  &kp INS  
+&kp ESC   &kp LPAR   &kp RPAR  &kp STAR  &kp FSLH        &kp N7  &kp N8  &kp N9  &kp N0  &kp BSPC  
 &kp TAB   &kp LBKT   &kp RBKT  &kp PLUS  &kp MINUS       &kp N4  &kp N5  &kp N6  &kp DOT  &kp DEL  
 &kp BSLH  &kp LBRC   &kp RBRC  &kp LT    &kp GT          &kp N1  &kp N2  &kp N3  &kp EQUAL  &kp INS
 &kp LCTRL &kp LSHFT  &kp LALT  &trans    &kp RET         &kp RET &trans  &kp RGUI  &kp RSHFT  &kp RCTL
